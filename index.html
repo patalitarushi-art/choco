@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Yohan 💛</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>For Yohan 💛</h1>
+
+<!-- Chocolate Image -->
+<img id="choco" src="choco.png" alt="Chocolate">
+
+<!-- Buttons -->
+<button class="btn" onclick="showPopup('funny')">Funny Message 😂</button>
+<button class="btn" onclick="showPopup('cute')">Cute Message 💛</button>
+<button class="btn" onclick="showPopup('final')">Final Message ❤️</button>
+
+<!-- Music -->
+<audio id="bgMusic" src="music.mp3" autoplay loop></audio>
+
+<!-- Popups -->
+<div id="funny" class="popup">
+    <p>I wish I could get you nutties today but you will have to do with this virtual chocolate for now. I will give you my nutties soon. :P</p>
+    <button class="close-btn" onclick="closePopup('funny')">Close</button>
+</div>
+
+<div id="cute" class="popup">
+    <p>This is very tough wth and I miss you a lot. I hope this brings a smile on your face. :)</p>
+    <button class="close-btn" onclick="closePopup('cute')">Close</button>
+</div>
+
+<div id="final" class="popup">
+    <p>I hope to see you very soon. Happy Chocolate's Day baby. &lt;3</p>
+    <button class="close-btn" onclick="closePopup('final')">Close</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
