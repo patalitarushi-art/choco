@@ -1,18 +1,27 @@
-// Popup system
+// POPUP FUNCTIONS
 function showPopup(id) {
-    document.getElementById(id).classList.add("show");
-}
-function closePopup(id) {
-    document.getElementById(id).classList.remove("show");
+    document.getElementById(id).style.display = "block";
+
+    // Try playing music on button click
+    const music = document.getElementById("bgMusic");
+    music.volume = 1.0;
+    music.play().catch(() => {});
 }
 
-// Floating hearts generator
-setInterval(() => {
-    let heart = document.createElement("div");
-    heart.className = "heart";
-    heart.innerHTML = "💗";
-    heart.style.left = Math.random() * window.innerWidth + "px";
-    heart.style.fontSize = (20 + Math.random()*20) + "px";
-    document.body.appendChild(heart);
-    setTimeout(() => heart.remove(), 4000);
-}, 500);
+function closePopup(id) {
+    document.getElementById(id).style.display = "none";
+}
+
+// ENABLE MUSIC ON FIRST USER INTERACTION
+window.addEventListener("click", function enableAudio() {
+    const music = document.getElementById("bgMusic");
+
+    music.play().then(() => {
+        console.log("Music started after user interaction");
+    }).catch(err => {
+        console.log("Autoplay still blocked:", err);
+    });
+
+    // Remove event listener after first successful play
+    window.removeEventListener("click", enableAudio);
+});
