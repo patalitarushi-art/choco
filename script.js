@@ -1,15 +1,15 @@
 function showPopup(id) {
     document.getElementById(id).style.display = "block";
+
     const music = document.getElementById("bgMusic");
-    music.play().catch(()=>{});
+    music.play().catch(() => {});
 }
 
 function closePopup(id) {
     document.getElementById(id).style.display = "none";
 }
 
-// Enable music on first click ANYWHERE
 window.addEventListener("click", () => {
     const music = document.getElementById("bgMusic");
-    music.play().catch(()=>{});
+    music.play().catch(() => {});
 }, { once: true });
